@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お役立ちツール</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="site-logo">
+                <span class="logo-main">Mysekai</span>
+                <span class="logo-sub">周回お役立ちツール</span>
+            </div>
+        
+
+            <nav class="header-nav">
+                <button class="nav-button active">
+                    📖 解説
+                </button>
+                <button class="nav-button">
+                    🛠 実用
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="hero">
+            <div class="hero-icon">🎵</div>
+            <h1>
+                プロセカ周回<br>
+                お役立ちツール
+            </h1>
+            <p>
+                周回に役立つ情報や計算ツールを<br>
+                ひとつにまとめました。
+            </p>
+        </section>
+
+        <section id="explanation" class="content tab-content active">
+            <h2>📖 解説</h2>
+            <p class="section-description">
+                プロセカの周回で使われる用語や、
+                周回に関する知識を分かりやすく解説します。
+            </p>
+
+            <div class="card-grid">
+                <a href="#" class="menu-card" id="twitter-terms-card">
+                    <div class="card-icon">𝕏</div>
+                    <div class="card-text">
+                        <h3>Twitter募集の用語</h3>
+                        <p>周回募集でよく使われる用語を解説します。</p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="#"  class="menu-card" id="discord-guide-button">
+                    <div class="card-icon">💬</div>
+                    <div class="card-text">
+                        <h3>Discordを使った周回</h3>
+                        <p>
+                            Discordでの周回方法や基本的な流れを解説します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="#" class="menu-card">
+                    <div class="card-icon">💬</div>
+                    <div class="card-text">
+                        <h3>周回中のスタンプ</h3>
+                        <p>
+                            周回中によく使われるスタンプの意味を紹介します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="#" class="menu-card" id="support-guide-button">
+                    <div class="card-icon">📊</div>
+                    <div class="card-text">
+                        <h3>支援編成・実効値</h3>
+                        <p>
+                            支援編成や実効値について分かりやすく解説します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="practical" class="content tab-content">
+            <h2>🛠 実用</h2>
+            <p class="section-description">
+                周回中やイベントを走るときに使える
+                便利なツールです。
+            </p>
+
+            <div class="card-grid">
+                <a href="template.html" class="menu-card practical-card">
+                    <div class="card-icon">📝</div>
+                    <div class="card-text">
+                        <h3>ツイ募テンプレ</h3>
+                        <p>
+                            周回募集の文章を簡単に作成できます。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="encore.html" class="menu-card practical-card">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-text">
+                        <h3>アンコール判断</h3>
+                        <p>
+                            実効値からアンコールを取るべきか判断します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="event.html" class="menu-card practical-card">
+                    <div class="card-icon">📈</div>
+                    <div class="card-text">
+                        <h3>イベントP・周回計算</h3>
+                        <p>
+                            必要周回数・時速・残り時間・消費クリスタルを計算します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="event_compare.html" class="menu-card practical-card">
+                    <div class="card-icon">⚖️</div>
+                    <div class="card-text">
+                        <h3>イベント編成比較</h3>
+                        <p>
+                            総合力とイベントボーナスを比較して、どちらの編成を使うか判断します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+                <a href="internal.html" class="menu-card practical-card">
+                    <div class="card-icon">🧮</div>
+                    <div class="card-text">
+                        <h3>内部値・実効値計算</h3>
+                        <p>
+                            1～5枠の数値から、内部値と実効値を計算します。
+                        </p>
+                    </div>
+                    <span class="arrow">›</span>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            プロセカ周回お役立ちツール
+        </p>
+        <p class="copyright">
+            © 2026
+        </p>
+    </footer>
+    <script src="js/main.js"></script>
+    <div class="image-modal" id="twitter-terms-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="twitter-terms-close">×</button>
+            <img src="images/Twitter_text.png" alt="Twitter/X募集の用語">
+        </div>
+    </div>
+    <div class="image-modal" id="discord-guide-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="discord-guide-close">×</button>
+            <img src="images/Discord_text.png" alt="Discordを使用した周回関連について">
+        </div>
+    </div>
+    <div class="image-modal" id="support-guide-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="support-guide-close">×</button>
+            <img src="images/Sien_text.png" alt="支援編成・実効値について">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベントP・周回計算 ｜お役立ちツール</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="site-logo">
+                <span class="logo-main">Mysekai</span>
+                <span class="logo-sub">周回お役立ちツール</span>
+            </div>
+
+            <button class="menu-button" id="menu-button">≡</button>
+            <div class="header-menu" id="header-menu">
+
+                <div class="menu-section">
+                    <button class="menu-section-button">▼ 解説</button>
+                    <div class="menu-items">
+                        <a href="#" id="twitter-terms-button">📖 Twitter/X募集の用語について</a>
+                        <a href="#" id="discord-guide-button">💬 Discordを使用した周回関連について</a>
+                        <a href="index.html">😊 主に使われる周回中のスタンプについて</a>
+                        <a href="#" id="support-guide-button">📊 支援編成、実効値などについて</a>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <button class="menu-section-button">▼ 実用</button>
+                    <div class="menu-items">
+                        <a href="template.html">📝 ツイ募集テンプレ</a>
+                        <a href="encore.html">🎯 アンコール判断</a>
+                        <a href="event.html">📈 イベントP・周回計算</a>
+                        <a href="event_compare.html">⚖️ イベント編成比較</a>
+                        <a href="internal.html">🧮 内部値・実効値計算</a>
+                    </div>
+                </div>
+            </div>   
+    </header>
+
+    <main class="main">
+        <section class="tool-page">
+
+            <div class="tool-page-header">
+                <div class="hero-icon">📈</div>
+                <h1>イベントP・周回計算</h1>
+                <p>
+                    イベントPや周回数から、<br>
+                    目標までに必要な周回数・時間・クリスタルを計算します。
+                </p>
+            </div>
+
+            <div class="tool-card">
+                <h2>📊 計算条件</h2>
+                <!-- 今のイベントP -->
+                <div class="form-group">
+                    <label for="current-point">
+                        今のイベントP（合計）
+                    </label>
+                    <input
+                        type="text"
+                        id="current-point"
+                        placeholder="例：500,000"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <!-- 目標イベントP -->
+                <div class="form-group">
+                    <label for="target-point">
+                        目標イベントP
+                    </label>
+                    <input
+                        type="text"
+                        id="target-point"
+                        placeholder="例：2,000,000"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <!-- 平均イベントP -->
+                <div class="form-group">
+                    <label for="average-point">
+                        平均イベントP（1回）
+                    </label>
+                    <input
+                        type="text"
+                        id="average-point"
+                        placeholder="例：25,000"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <!-- 1時間あたりの周回数 -->
+                <div class="form-group">
+                    <label for="runs-per-hour">
+                        1時間あたりの周回数
+                    </label>
+                    <input
+                        type="number"
+                        id="runs-per-hour"
+                        placeholder="例：20"
+                        min="1"
+                    >
+                </div>
+
+                <!-- 炊き数 -->
+                <div class="form-group">
+                    <label for="crystal-per-run">
+                        1回の炊き数
+                    </label>
+                    <select id="crystal-per-run">
+                        <option value="1">1炊き</option>
+                        <option value="2">2炊き</option>
+                        <option value="3">3炊き</option>
+                        <option value="4">4炊き</option>
+                        <option value="5">5炊き</option>
+                        <option value="6">6炊き</option>
+                        <option value="7">7炊き</option>
+                        <option value="8">8炊き</option>
+                        <option value="9">9炊き</option>
+                        <option value="10">10炊き</option>
+                    </select>
+                    <p class="input-note">
+                        ※1炊き＝10クリスタル
+                    </p>
+                </div>
+
+                <!-- 計算ボタン -->
+                <button
+                    id="calculate-button"
+                    class="tool-main-button"
+                >
+                    📈 計算する
+                </button>
+
+            </div>
+
+            <!-- 計算結果 -->
+            <div
+                id="event-result"
+                class="tool-card event-result"
+            >
+                <h2>📋 計算結果</h2>
+                <div class="event-result-grid">
+                    <div class="event-result-item">
+                        <span>残りイベントP</span>
+                        <strong id="remaining-point">-</strong>
+                    </div>
+                    <div class="event-result-item">
+                        <span>必要周回数</span>
+                        <strong id="required-runs">-</strong>
+                    </div>
+                    <div class="event-result-item">
+                        <span>1時間あたりのイベントP</span>
+                        <strong id="points-per-hour">-</strong>
+                    </div>
+                    <div class="event-result-item">
+                        <span>残り時間</span>
+                        <strong id="remaining-time">-</strong>
+                    </div>
+                    <div class="event-result-item">
+                        <span>予想消費クリスタル</span>
+                        <strong id="required-crystals">-</strong>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">
+                ← メインページに戻る
+            </a>
+
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>
+            お役立ちツール
+        </p>
+        <p class="copyright">
+            © 2026 
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/event.js"></script>
+    <div class="image-modal" id="twitter-terms-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="twitter-terms-close">×</button>
+            <img src="images/Twitter_text.png" alt="Twitter/X募集の用語">
+        </div>
+    </div>
+    <div class="image-modal" id="discord-guide-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="discord-guide-close">×</button>
+            <img src="images/Discord_text.png" alt="Discordを使用した周回関連について">
+        </div>
+    </div>
+    <div class="image-modal" id="support-guide-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="support-guide-close">×</button>
+            <img src="images/Sien_text.png" alt="支援編成・実効値について">
+        </div>
+    </div>
+</body>
+</html>
