@@ -755,3 +755,9 @@ body {
         right: -6px;
     }
 }
+
+.site-logo{
+    text-decoration:none;
+    color:inherit;
+    cursor:pointer;
+}
