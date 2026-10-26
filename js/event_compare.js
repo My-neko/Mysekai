@@ -69,15 +69,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const valueBonus2 =
             Number(bonus2.value);
 
-
-        // 未入力チェック
+        // 入力値チェック
         if (
-            !power1.value ||
-            !bonus1.value ||
-            !power2.value ||
-            !bonus2.value
+            !power1.value.trim() ||
+            !bonus1.value.trim() ||
+            !power2.value.trim() ||
+            !bonus2.value.trim()
         ) {
             alert("必要な項目を入力してください。");
+            return;
+        }
+        
+        // 数値が正しく入力されているか確認
+        const inputs = [
+            valuePower1,
+            valueBonus1,
+            valuePower2,
+            valueBonus2
+        ];
+        
+        if (inputs.some(value => !Number.isFinite(value))) {
+            alert("正しい数値を入力してください。");
+            return;
+        }
+        
+        // 負の数をチェック
+        if (inputs.some(value => value < 0)) {
+            alert("0以上の数値を入力してください。");
+            return;
+        }
+        
+        // 総合力は整数として扱う
+        if (
+            !Number.isSafeInteger(valuePower1) ||
+            !Number.isSafeInteger(valuePower2)
+        ) {
+            alert("総合力は正しい整数で入力してください。");
             return;
         }
 
