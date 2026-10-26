@@ -126,7 +126,8 @@ ${text}`;
 
         window.open(
             url.toString(),
-            "_blank"
+            "_blank",
+            "noopener,noreferrer"
             
         );
 
