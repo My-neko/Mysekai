@@ -107,32 +107,27 @@ ${text}`;
     });
 
 
+    
     // =====================
     // Xへ送る
     // =====================
 
     xButton.addEventListener("click", () => {
 
-        if (!resultText.value) {
+        const result = resultText.value.trim();
+
+        if (!result) {
+            alert("先に募集文を作成してください。");
             return;
         }
 
-
-        const text = encodeURIComponent(
-            resultText.value
-        );
-
-
-        const url =
-            `https://twitter.com/intent/tweet?text=${text}`;
-
+        const url = new URL("https://twitter.com/intent/tweet");
+        url.searchParams.set("text", result);
 
         window.open(
-            url,
+            url.toString(),
             "_blank",
             "noopener,noreferrer"
         );
 
     });
-
-});
