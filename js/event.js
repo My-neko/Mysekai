@@ -80,21 +80,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 未入力チェック
         if (
-            !currentPoint.value ||
-            !targetPoint.value ||
-            !averagePoint.value ||
-            !runsPerHour.value
+            !currentPoint.value.trim() ||
+            !targetPoint.value.trim() ||
+            !averagePoint.value.trim() ||
+            !runsPerHour.value.trim() ||
+            !crystalPerRun.value.trim()
         ) {
-            alert("必要な項目を入力してください。");
+            alert("必要な項目をすべて入力してください。");
             return;
         }
-
-
-        // 目標Pが現在P以下の場合
+        
+        // 数値チェック
+        const inputs = [current, target, average, runs, energy];
+        
+        if (inputs.some(value => !Number.isFinite(value))) {
+            alert("正しい数値を入力してください。");
+            return;
+        }
+        
+        // 負の数をチェック
+        if (inputs.some(value => value < 0)) {
+            alert("0以上の数値を入力してください。");
+            return;
+        }
+        
+        // 平均獲得Pと周回数は0より大きくする
+        if (average <= 0 || runs <= 0) {
+            alert("平均獲得Pと1時間あたりの周回数は0より大きい値を入力してください。");
+            return;
+        }
+        
+        // 目標Pは現在Pより大きくする
         if (target <= current) {
             alert("目標イベントPは、現在のイベントPより大きくしてください。");
             return;
         }
+
 
 
         // 残りイベントP
