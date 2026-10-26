@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener("DOMContentLoaded", () => {
     const value1 = document.getElementById("value-1");
     const value2 = document.getElementById("value-2");
@@ -47,4 +46,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-```
