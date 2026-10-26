@@ -90,49 +90,20 @@ ${text}`;
     // =====================
 
     copyButton.addEventListener("click", async () => {
-
         if (!resultText.value) {
             return;
         }
-
-
+    
         try {
-
-            await navigator.clipboard.writeText(
-                resultText.value
-            );
-
-            copyButton.textContent =
-                "✅ コピーしました！";
-
-
-            setTimeout(() => {
-
-                copyButton.textContent =
-                    "📋 コピー";
-
-            }, 1500);
-
-
+            await navigator.clipboard.writeText(resultText.value);
+            copyButton.textContent = "✅ コピーしました！";
         } catch (error) {
-
-            resultText.select();
-
-            document.execCommand("copy");
-
-            copyButton.textContent =
-                "✅ コピーしました！";
-
-
-            setTimeout(() => {
-
-                copyButton.textContent =
-                    "📋 コピー";
-
-            }, 1500);
-
+            copyButton.textContent = "❌ コピーできませんでした";
         }
-
+    
+        setTimeout(() => {
+            copyButton.textContent = "📋 コピー";
+        }, 1500);
     });
 
 
