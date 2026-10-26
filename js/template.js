@@ -132,3 +132,20 @@ ${text}`;
         );
 
     });
+
+
+    xButton.addEventListener("click", () => {
+        console.count("Xボタンのクリック処理");
+    
+        const result = resultText.value.trim();
+    
+        if (!result) {
+            alert("先に募集文を作成してください。");
+            return;
+        }
+    
+        const url = new URL("https://twitter.com/intent/tweet");
+        url.searchParams.set("text", result);
+    
+        window.open(url.toString(), "_blank", "noopener,noreferrer");
+    });
