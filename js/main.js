@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionButtons.forEach(button => {
         button.addEventListener("click", () => {
             const items = button.nextElementSibling;
+            if (!items) return;
             items.classList.toggle("show");
 
             if (items.classList.contains("show")) {
