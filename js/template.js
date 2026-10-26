@@ -158,7 +158,8 @@ ${text}`;
 
         window.open(
             url,
-            "_blank"
+            "_blank",
+            "noopener,noreferrer"
         );
 
     });
