@@ -112,8 +112,6 @@ ${text}`;
     // Xへ送る
     // =====================
     xButton.addEventListener("click", () => {
-        console.count("Xボタンのクリック処理");
-    
         const result = resultText.value.trim();
     
         if (!result) {
@@ -124,6 +122,8 @@ ${text}`;
         const url = new URL("https://twitter.com/intent/tweet");
         url.searchParams.set("text", result);
     
-        window.open(url.toString(), "_blank", "noopener,noreferrer");
+        console.log("Xを開くURL:", url.toString());
+    
+        window.open(url.toString(), "_blank");
     });
 });
